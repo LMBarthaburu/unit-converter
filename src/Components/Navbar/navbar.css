@@ -1,0 +1,17 @@
+.navbar{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 5px rgb(145, 145, 145)
+}
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  color: var(--purple);
+  font-weight: 900;
+}
+.navbar-brand p{
+  padding-left: 5px;
+  line-height: 100%;
+}
