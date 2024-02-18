@@ -78,14 +78,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
     }
 
-.rows{
-    transition: all 0.2s ease-in;
-}
 .heart:hover{
   transform: scale(1.1);
-}
-.rows:hover{
-  transform: rotate(180deg);
 }
 
 @media (max-width:992px){
