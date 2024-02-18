@@ -76,6 +76,12 @@ function Conversor() {
       convert.value=outputText
     }
   }
+  function generarNumeroAleatorio() {
+    const min = 10000000;
+    const max = 99999999;
+    const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+    return numeroAleatorio;
+  }
   const save =()=>{
     const input = document.getElementById('input-value').value
     const output = document.getElementById('output-value').value
@@ -83,6 +89,8 @@ function Conversor() {
     const outputReset = document.getElementById('output-value')
     const inputText = document.getElementById('input-text').innerText
     const outputText = document.getElementById('output-text').innerText
+    const id = generarNumeroAleatorio()
+    
     if(!input || !output || !inputText || !outputText ){
       alert ('Enter a value')
       return
@@ -92,11 +100,13 @@ function Conversor() {
       value2: output,
       text1: inputText,
       text2: outputText,
+      id: id
     }
     saved.push(ArraySaved)
     localStorage.setItem('UnitConverter',JSON.stringify(saved))
     inputReset.value=''
     outputReset.value=''
+    window.location.reload(true)
   }
   return (
     <div className='conversor'>
@@ -114,7 +124,7 @@ function Conversor() {
                 <option value="inches">inches → cm</option>
               </select>
               <button className='conversor-button' onClick={change}>
-                <TbArrowsLeftRight/>
+                <TbArrowsLeftRight className='rows'/>
               </button>
             </div>
             <div className='input-box-content'>
@@ -123,7 +133,9 @@ function Conversor() {
             </div>
           </div>
           <div className='result-box'>
-            <button className='conversor-button' onClick={save}><FaRegHeart/></button>
+            <button className='conversor-button' onClick={save}>
+              <FaRegHeart className='heart'/>
+            </button>
             <div className='output-box'>
               <input type="number" className='output' id='output-value' placeholder='result' readOnly/>
               <p id='output-text' className='output-text'>miles</p>

@@ -1,0 +1,23 @@
+.saved-card{
+  background-color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 15px;
+}
+.saved-card p{
+  margin: 0;
+}
+.saved-card-button{
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: var(--text-gray);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
