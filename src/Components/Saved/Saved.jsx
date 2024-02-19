@@ -3,6 +3,7 @@ import './saved.css'
 import SavedCard from '../SavedCard/SavedCard'
 
 function Saved() {
+  // const urlBE = process.env.REACT_APP_URL_BE
   const [saved, setSaved] = useState([])
 
   const getData =()=>{
@@ -16,6 +17,20 @@ function Saved() {
     getData()
   }, [])
 
+  // const getData = async()=>{
+  //   const res = await fetch(`${urlBE}data`)
+  //   const json = await res.json()
+  //   const conversiones = json.conversiones
+  //   if(conversiones.length===0){
+  //     return
+  //   }else{
+  //     setSaved(conversiones)
+  //   }
+  // }
+  // useEffect(() => {
+  //   getData()
+  // }, [])// eslint-disable-line react-hooks/exhaustive-deps
+  // cambiar id por _id
 
   return (
     <div className='saved'>
