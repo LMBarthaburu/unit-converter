@@ -102,7 +102,7 @@ function Conversor() {
       text2: outputText,
       id: id
     }
-    saved.push(ArraySaved)
+    saved.unshift(ArraySaved)
     localStorage.setItem('UnitConverter',JSON.stringify(saved))
     inputReset.value=''
     outputReset.value=''
