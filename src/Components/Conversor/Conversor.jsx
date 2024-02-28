@@ -28,8 +28,8 @@ function Conversor() {
       const result = input*0.621371
       output.value=result.toFixed(2)
       inputText.innerHTML=convertValue
-      outputText.innerHTML='miles'
-    }else if(convertValue==='miles'){
+      outputText.innerHTML='millas'
+    }else if(convertValue==='millas'){
       const result = input/0.621371
       output.value=result.toFixed(2)
       inputText.innerHTML=convertValue
@@ -38,22 +38,22 @@ function Conversor() {
       const result = input*0.393701
       output.value=result.toFixed(2)
       inputText.innerHTML=convertValue
-      outputText.innerHTML='inches'
-    } else if (convertValue==='inches'){
+      outputText.innerHTML='pulgadas'
+    } else if (convertValue==='pulgadas'){
       const result = input/0.393701
       output.value=result.toFixed(2)
       inputText.innerHTML=convertValue
       outputText.innerHTML='cm'
-    } else if(convertValue ==='meter'){
+    } else if(convertValue ==='metros'){
       const result = input*3.28084
       output.value=result.toFixed(2)
       inputText.innerHTML=convertValue
-      outputText.innerHTML='feet'
+      outputText.innerHTML='pies'
     } else {
       const result = input/3.28084
       output.value=result.toFixed(2)
       inputText.innerHTML=convertValue
-      outputText.innerHTML='meter'
+      outputText.innerHTML='metros'
     }
   }
   const change =()=>{
@@ -67,7 +67,7 @@ function Conversor() {
     const newOutputText = document.getElementById('output-text')
     const convert = document.getElementById("select-convert")
     if(!input){
-      alert('Enter a value')
+      alert('Ingrese un valor valido')
     }else{
       newValue.value=output
       newOutput.value = input
@@ -76,12 +76,7 @@ function Conversor() {
       convert.value=outputText
     }
   }
-  function generarNumeroAleatorio() {
-    const min = 10000000;
-    const max = 99999999;
-    const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
-    return numeroAleatorio;
-  }
+
   const save =()=>{
     const input = document.getElementById('input-value').value
     const output = document.getElementById('output-value').value
@@ -89,10 +84,10 @@ function Conversor() {
     const outputReset = document.getElementById('output-value')
     const inputText = document.getElementById('input-text').innerText
     const outputText = document.getElementById('output-text').innerText
-    const id = generarNumeroAleatorio()
-    
+    const id = Math.floor(Math.random() * 100000000);
+
     if(!input || !output || !inputText || !outputText ){
-      alert ('Enter a value')
+      alert ('Ingrese un valor valido')
       return
     }
     let ArraySaved = {
@@ -111,24 +106,24 @@ function Conversor() {
   return (
     <div className='conversor'>
       <div className='conversor-box'>
-        <h2>convert</h2>
+        <h2>Conversor de unidades</h2>
         <div>
           <div className='input-box'>
             <div className='input-box-content'>
               <select id="select-convert" name='select-convert' className='input' onChange={conversor}>
-                <option value="km">km → miles</option>
-                <option value="miles">miles → km</option>
-                <option value="feet">feet → meters</option>
-                <option value="meter">meter → feet</option>
-                <option value="cm">cm → inches</option>
-                <option value="inches">inches → cm</option>
+                <option value="km">km → millas</option>
+                <option value="millas">millas → km</option>
+                <option value="pies">pies → metros</option>
+                <option value="metros">metros → pies</option>
+                <option value="cm">cm → pulgadas</option>
+                <option value="pulgadas">pulgadas → cm</option>
               </select>
               <button className='conversor-button' onClick={change}>
                 <TbArrowsLeftRight className='rows'/>
               </button>
             </div>
             <div className='input-box-content'>
-              <input type="number" className='input  text-rigth' id='input-value' placeholder='value' onChange={conversor}/>
+              <input type="number" className='input  text-rigth' id='input-value' placeholder='Valor a convertir' onChange={conversor}/>
               <p id='input-text'>km</p>
             </div>
           </div>
@@ -137,8 +132,8 @@ function Conversor() {
               <FaRegHeart className='heart'/>
             </button>
             <div className='output-box'>
-              <input type="number" className='output' id='output-value' placeholder='result' readOnly/>
-              <p id='output-text' className='output-text'>miles</p>
+              <input type="number" className='output' id='output-value' placeholder='Resultado' readOnly/>
+              <p id='output-text' className='output-text'>millas</p>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ function Navbar() {
     <nav className='navbar'>
       <div className='navbar-brand'>
         <TbArrowsLeftRight className='navbar-brand-logo'/>
-        <p>unit converter</p>
+        <p>CONVERSOR</p>
       </div>
     </nav>
   )
