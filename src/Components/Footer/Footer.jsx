@@ -4,8 +4,8 @@ import './footer.css'
 function Footer() {
   return (
     <div className='footer'>
-      <p>Terms of service</p>
-      <p>Privacy policy</p>
+      <p>Terminos y condiciones</p>
+      <p>Politica de privacidad</p>
     </div>
   )
 }

@@ -42,7 +42,8 @@
   text-align: right;
 }
 .input option{
-  color: var(--purple);
+  color: var(--text-white);
+  background-color: var(--purple);
 }
 .output{
   background-color: transparent;
